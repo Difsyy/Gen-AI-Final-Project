@@ -90,7 +90,7 @@ function ToastViewport({
     <div
       aria-live="polite"
       aria-relevant="additions"
-      className="pointer-events-none fixed inset-x-0 top-3 z-50 mx-auto flex w-full max-w-3xl flex-col gap-2 px-3"
+      className="pointer-events-none fixed inset-x-0 top-3 z-50 mx-auto flex w-full max-w-5xl flex-col gap-2 px-3"
     >
       {toasts.map((t) => (
         <div

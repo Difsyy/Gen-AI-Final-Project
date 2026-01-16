@@ -11,13 +11,13 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh bg-(--brand-50) text-(--brand-900)">
       <Header />
 
-      <main className="mx-auto w-full max-w-3xl px-4 py-6">
+      <main className="mx-auto w-full max-w-5xl px-4 py-6">
         <div className="overflow-hidden rounded-2xl border border-[rgba(11,46,51,0.16)] bg-white shadow-sm">
           {children}
         </div>
       </main>
 
-      <footer className="mx-auto w-full max-w-3xl px-4 pb-8 text-xs text-[rgba(11,46,51,0.6)]">
+      <footer className="mx-auto w-full max-w-5xl px-4 pb-8 text-xs text-[rgba(11,46,51,0.6)]">
         Uses Google AI Studio API key server-side only.
       </footer>
     </div>
@@ -29,7 +29,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[rgba(11,46,51,0.16)] bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         <div className="flex min-w-0 items-center gap-3">
           <Link
             href="/"

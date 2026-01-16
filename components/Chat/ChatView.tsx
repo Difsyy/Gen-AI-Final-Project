@@ -27,24 +27,40 @@ const SYSTEM_MESSAGE: ChatMessage = {
 
 const RECOMMENDATIONS: Array<{ title: string; subtitle: string; prompt: string }> = [
   {
-    title: "Study plan",
-    subtitle: "Make a 7-day plan for a topic",
-    prompt: "Create a 7-day study plan to learn [topic]. Include daily goals and quick quizzes.",
+    title: "SD prompt from brief",
+    subtitle: "Turn a design brief into a prompt",
+    prompt:
+      "Convert this design brief into a Stable Diffusion prompt. Give: (1) final prompt, (2) negative prompt, (3) 3 variations.\n\nBrief:\n[Paste brief here]",
   },
   {
-    title: "Summarize notes",
-    subtitle: "Turn text into bullet points",
-    prompt: "Summarize the following into 8 bullets and 3 key takeaways:\n\n[Paste text here]",
+    title: "Poster / key visual",
+    subtitle: "Graphic design + composition",
+    prompt:
+      "Write a Stable Diffusion prompt for a poster key visual. Include composition, typography-safe negative space, lighting, and style. Provide 1 prompt + 1 negative prompt + 5 keywords. Theme: [theme].",
   },
   {
-    title: "Draft an email",
-    subtitle: "Polite, clear, professional",
-    prompt: "Draft a professional email to [recipient] about [topic]. Keep it concise.",
+    title: "Product photography",
+    subtitle: "Studio shot + styling",
+    prompt:
+      "Create a Stable Diffusion prompt for product photography of [product]. Include camera/lens vibe, lighting setup, background, materials, and realism cues. Also provide a negative prompt.",
   },
   {
-    title: "Brainstorm ideas",
-    subtitle: "Generate options + pros/cons",
-    prompt: "Brainstorm 10 ideas for [project]. For each, add one pro and one con.",
+    title: "UI concept moodboard",
+    subtitle: "Design directions (3 options)",
+    prompt:
+      "Propose 3 UI visual directions for a [app type] in 2026. For each: vibe words, color palette idea, typography style, and a Stable Diffusion prompt to generate a moodboard image.",
+  },
+  {
+    title: "Prompt polish",
+    subtitle: "Make it more controllable",
+    prompt:
+      "Improve this Stable Diffusion prompt for better controllability. Keep meaning, add structure, and suggest a negative prompt.\n\nPrompt:\n[Paste prompt here]",
+  },
+  {
+    title: "Critique an image",
+    subtitle: "What to change next",
+    prompt:
+      "Critique this generated image as if for a design course. Identify 5 issues (composition, lighting, style consistency), then suggest the next prompt edits + negative prompt edits.\n\nDescribe the image:\n[Describe here]",
   },
 ];
 
@@ -246,7 +262,7 @@ export default function ChatView() {
               Chat
             </span>
           </div>
-          <p className="mt-1 text-sm text-[rgba(11,46,51,0.72)]">Concise, server-side Gemini chat.</p>
+          <p className="mt-1 text-sm text-[rgba(11,46,51,0.72)]">Prompt coach for Stable Diffusion-style workflows.</p>
         </div>
         <button
           type="button"
@@ -274,7 +290,7 @@ export default function ChatView() {
               </div>
 
               <div className="mt-3">
-                <div className="text-xs font-medium text-[rgba(11,46,51,0.72)]">Recommendations</div>
+                <div className="text-xs font-medium text-[rgba(11,46,51,0.72)]">Design recommendations (Stable Diffusion style)</div>
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {RECOMMENDATIONS.map((r) => (
                     <button
